@@ -35,10 +35,10 @@ export const ParticleBackground = () => {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random() * 0.5 + 0.2,
+        size: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.6,
+        speedY: (Math.random() - 0.5) * 0.6,
+        opacity: Math.random() * 0.4 + 0.2,
       });
     }
 
@@ -49,24 +49,40 @@ export const ParticleBackground = () => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
+        // Bounce off edges
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
+        // --- Darker Gold & Bronze tones
+        const baseColor = `hsl(100 100% 20% / ${particle.opacity})`;   // darker amber-gold
+        const glowColor = `hsl(30 30% 28% / ${particle.opacity * 0.8})`; // deep bronze shadow
+
+        const gradient = ctx.createRadialGradient(
+          particle.x,
+          particle.y,
+          0,
+          particle.x,
+          particle.y,
+          particle.size * 2
+        );
+        gradient.addColorStop(0, baseColor);
+        gradient.addColorStop(1, glowColor);
+
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(147, 112, 219, ${particle.opacity})`;
+        ctx.fillStyle = gradient;
         ctx.fill();
 
-        // Draw connections
-        particles.slice(i + 1).forEach(particle2 => {
+        // --- Darker golden connection lines
+        particles.slice(i + 1).forEach((particle2) => {
           const dx = particle.x - particle2.x;
           const dy = particle.y - particle2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(147, 112, 219, ${0.2 * (1 - distance / 150)})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `hsl(37 80% 40% / ${0.15 * (1 - distance / 150)})`;
+            ctx.lineWidth = 0.6;
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particle2.x, particle2.y);
             ctx.stroke();
@@ -88,7 +104,10 @@ export const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0 }}
+      style={{
+        zIndex: 0,
+        background: 'transparent',
+      }}
     />
   );
 };

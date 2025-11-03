@@ -125,7 +125,7 @@ export const Hero = () => {
           {/* Avatar Image */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative animate-float">
-              <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30"></div>
+              <div className="absolute inset-0 rounded-full blur-3xl opacity-40 bg-[radial-gradient(circle_at_center,hsl(42_95%_60%_/_0.45),hsl(28_60%_40%_/_0.1)_75%)]"></div>
               <img
                 src={heroAvatar}
                 alt="Vaibhav Mishra"
