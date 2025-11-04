@@ -129,7 +129,7 @@ export const Hero = () => {
               <img
                 src={heroAvatar}
                 alt="Vaibhav Mishra"
-                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+                className="relative w-96 h-96 sm:w-80 sm:h-80 lg:w- 96 lg:h-96 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
               />
             </div>
           </div>
