@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowDown, Linkedin, Github } from 'lucide-react';
+import { ArrowDown, Linkedin, Github, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import heroAvatar from '@/assets/hero-avatar.png';
 
@@ -102,7 +102,7 @@ export const Hero = () => {
 
             <div className="flex gap-4 justify-center lg:justify-start pt-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/atmanirbharchanakya/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-foreground hover:bg-primary hover:text-white hover:border-primary smooth-transition hover:scale-110 active:scale-95"
@@ -111,13 +111,13 @@ export const Hero = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://github.com"
+                href="mailto:Mishravaibhav1403@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-foreground hover:bg-primary hover:text-white hover:border-primary smooth-transition hover:scale-110 active:scale-95"
-                aria-label="GitHub Profile"
+                aria-label="Mail"
               >
-                <Github className="w-6 h-6" />
+                <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>

@@ -59,7 +59,7 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4 text-base md:text-lg">Connect</h4>
             <div className="flex gap-3 mb-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/atmanirbharchanakya/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 hover:bg-primary hover:text-white smooth-transition"
@@ -67,22 +67,14 @@ export const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary/10 hover:bg-primary hover:text-white smooth-transition"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:contact@vaibhavmishra.com"
+                href="mailto:Mishravaibhav1403@gmail.com"
                 className="p-2 rounded-lg bg-primary/10 hover:bg-primary hover:text-white smooth-transition"
               >
                 <Mail className="w-5 h-5" />
               </a>
             </div>
             <p className="text-sm text-muted-foreground">
-              Kanpur, Uttar Pradesh, India
+              Bengaluru, Noida, Gurgaon, Delhi, Pune
             </p>
           </div>
         </div>
